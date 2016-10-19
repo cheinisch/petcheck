@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Haustiercheck: Kaninchen</string>
+
+    <!-- TODO: Strings für die Navigation -->
+    <string name="navigation_head">Haustiercheck:</string>
+    <string name="navigation_sub">Kaninchen</string>
+
+
+    <string name="navigation_drawer_open">Navigation öffnen</string>
+    <string name="navigation_drawer_close">Navigation schließen</string>
+    <string name="navigation_allgemeines">Allgemeines</string>
+    <string name="navigation_uebersicht">Übersicht</string>
+    <string name="navigation_checkliste">Was habe ich schon</string>
+
+
+    <string name="action_settings">Einstellungen</string>
+    <string name="action_about">Über diese App</string>
+
+    <!-- TODO: Strings für Allgemeines -->
+    <string name="allgemeines_head">Allgemeines</string>
+    <string name="allgemeines_title">Kaninchen</string>
+    <string name="allgemeines_text">Das Hauskaninchen (Oryctolagus cuniculus forma domestica) ist die domestizierte Form des Wildkaninchens. Es wird sowohl als Nutztier zur Fleisch- und Pelzproduktion als auch als Heimtier gehalten. Umgangssprachlich ist auch die Bezeichnung „Stallhase“ gebräuchlich.</string>
+
+    <!-- TODO: Übersicht -->
+    <string name="uebersicht_head"></string>
+    <string name="uebersicht_title"></string>
+
+    <!-- TODO: Strings für Fragment Checliste -->
+    <string name="checklist_header">Checkliste</string>
+    <string name="checklist_title">Meine Checkliste</string>
+
+    <string name="check_heu">Heu</string>
+    <string name="check_stroh">Stroh</string>
+    <string name="check_toilette">Toilette</string>
+    <string name="check_pellet">Pellets</string>
+    <string name="check_futter">Futter</string>
+    <string name="check_kruschel">Kruschelkiste</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment"></string>
+
+    <!-- TODO: Strings für Über diese App -->
+    <string name="text_Releasenote">
+        "Version 0.3.0\nBilder werden in der Detailansicht geladen\n\nVersion 0.2.1\nFehler in Manifestdatei behoben\n\Mehr als 200 Tiere werden in der Checkliste auf 200 gesetzt\n\nVersion 0.2.0\nCheckliste wird gespeichert, sobald ein Wert geändert wird.\n\nVersion 0.1.2\nÜber diese App Seite neu gestaltet\n\nVersion 0.1.1\nÜbersicht Daten werden jetzt aus JSONFile geladen. Dummydaten wurden entfernt\n\nVersion 0.1.0\nÜbersicht mit Liste/Detail versehen (Dummydaten)\n\nVersion 0.0.3\nVersionshinweise in "Über diese App" eingefügt\nTitel der Seiten angepasst\n\nVersion 0.0.2\nLogo geändert\n\nVersion 0.0.1\nErste Entwicklungsversion"
+    </string>
+    <string name="title_item_list">Items</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="title_activity_settings">Einstellungen</string>
+</resources>

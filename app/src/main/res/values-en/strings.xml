@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Petcheck: Rabbit</string>
+
+    <!-- TODO: Strings für die Navigation -->
+    <string name="navigation_head">Petcheck:</string>
+    <string name="navigation_sub">Rabbit</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_allgemeines">Information</string>
+    <string name="navigation_uebersicht">Overview</string>
+    <string name="navigation_checkliste">What I have</string>
+
+    <string name="action_settings">Settings (not work)</string>
+    <string name="action_about">About this APP</string>
+
+    <!-- TODO: Strings für Allgemeines -->
+    <string name="allgemeines_head">Information</string>
+    <string name="allgemeines_title">Rabbit</string>
+    <string name="allgemeines_text">Some information about the Rabbit</string>
+
+    <!-- TODO: Übersicht -->
+    <string name="uebersicht_head">Overview</string>
+    <string name="uebersicht_title"></string>
+
+    <!-- TODO: Strings für Fragment Checliste -->
+    <string name="checklist_header">Checklist</string>
+    <string name="checklist_title">My Checklist</string>
+
+    <string name="check_heu">Hay</string>
+    <string name="check_stroh">Straw</string>
+    <string name="check_toilette">Toilette</string>
+    <string name="check_pellet">Pellets</string>
+    <string name="check_futter">Food</string>
+    <string name="check_kruschel">Rustlebox</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- TODO: Strings für Über diese App -->
+    <string name="text_Releasenote">
+        "Version 0.3.0\nBilder werden in der Detailansicht geladen\n\nVersion 0.2.1\nFehler in Manifestdatei behoben\n\Mehr als 200 Tiere werden in der Checkliste auf 200 gesetzt\n\nVersion 0.2.0\nCheckliste wird gespeichert, sobald ein Wert geändert wird.\n\nVersion 0.1.2\nÜber diese App Seite neu gestaltet\n\nVersion 0.1.1\nÜbersicht Daten werden jetzt aus JSONFile geladen. Dummydaten wurden entfernt\n\nVersion 0.1.0\nÜbersicht mit Liste/Detail versehen (Dummydaten)\n\nVersion 0.0.3\nVersionshinweise in "Über diese App" eingefügt\nTitel der Seiten angepasst\n\nVersion 0.0.2\nLogo geändert\n\nVersion 0.0.1\nErste Entwicklungsversion"
+    </string>
+    <string name="title_item_list">Items</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="title_activity_settings">Settings</string>
+
+
+</resources>
