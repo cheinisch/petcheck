@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public static InputStream is;
+
+    // Erstelle einen Zähler für GoBack mit dem Wert 0
     public int gobackcound = 0;
 
 
@@ -84,6 +86,12 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
 
+        /* Zähler wird geprüft, wenn größer 0, dann wird zurückgegangen und
+        * den Zähler um 1 reduziert. Sobald Zähler bei 0 angekommen ist, wird
+        * die App beendet
+        * */
+
+        System.out.println("GoBack: " + gobackcound);
         if (gobackcound > 0){
             gobackcound = gobackcound - 1;
             super.onBackPressed();
@@ -92,12 +100,7 @@ public class MainActivity extends AppCompatActivity
             android.os.Process.killProcess(android.os.Process.myPid());
             System.exit(1);
         }
-/*
-        if (getFragmentManager().getBackStackEntryCount() > 0) {
-            getFragmentManager().popBackStack();
-        } else {
-            super.onBackPressed();
-        }*/
+
     }
 
     @Override
@@ -117,11 +120,13 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
 
+            gobackcound = gobackcound + 1;
             titelleiste("Einstellungen");
 
             return true;
         }else if(id == R.id.action_about){
 
+            gobackcound = gobackcound + 1;
             titelleiste("Über diese APP");
 
             AboutFragment aboutFragment = new AboutFragment();
@@ -143,6 +148,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_allgemeines) {
+
+
+            // GoBackcound wird für jeden Klick auf ein Menüeintrag hochgesetzt
+            gobackcound = gobackcound + 1;
 
             titelleiste(getResources().getString(R.string.allgemeines_head));
 
@@ -198,7 +207,6 @@ public class MainActivity extends AppCompatActivity
 
     public void start(){
 
-        gobackcound = gobackcound + 1;
         titelleiste(getResources().getString(R.string.allgemeines_head));
 
         AllgemeinesFragment allgemeinesFragment = new AllgemeinesFragment();
