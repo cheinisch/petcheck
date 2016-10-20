@@ -84,7 +84,7 @@ public class ItemDetailActivity extends AppCompatActivity {
 
             Intent intent = new Intent(this, MainActivity.class);
             //Werte an DetailActivity übergeben
-            intent.putExtra("goback", 2);
+            intent.putExtra("goback", "from_detail");
             NavUtils.navigateUpTo(this, intent);
             return true;
         }

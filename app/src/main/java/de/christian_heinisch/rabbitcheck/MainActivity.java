@@ -61,26 +61,16 @@ public class MainActivity extends AppCompatActivity
 
 
 
+
+
         start();
 
+
+
     }
 
 
-    public void overview() {
 
-        gobackcound = gobackcound + 1;
-        titelleiste("Übersicht");
-
-        OverviewFragment overviewFragment = new OverviewFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(
-                R.id.content_main,
-                overviewFragment,
-                overviewFragment.getTag()
-        )
-                .addToBackStack(null)
-                .commit();
-    }
 
 
     @Override
@@ -91,7 +81,6 @@ public class MainActivity extends AppCompatActivity
         * die App beendet
         * */
 
-        System.out.println("GoBack: " + gobackcound);
         if (gobackcound > 0){
             gobackcound = gobackcound - 1;
             super.onBackPressed();
@@ -205,7 +194,7 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    public void start(){
+    public void allgemeines(){
 
         titelleiste(getResources().getString(R.string.allgemeines_head));
 
@@ -215,6 +204,22 @@ public class MainActivity extends AppCompatActivity
                 R.id.content_main,
                 allgemeinesFragment,
                 allgemeinesFragment.getTag()
+        )
+                .addToBackStack(null)
+                .commit();
+    }
+
+    public void overview() {
+
+        gobackcound = gobackcound + 1;
+        titelleiste("Übersicht");
+
+        OverviewFragment overviewFragment = new OverviewFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(
+                R.id.content_main,
+                overviewFragment,
+                overviewFragment.getTag()
         )
                 .addToBackStack(null)
                 .commit();
@@ -241,7 +246,19 @@ public class MainActivity extends AppCompatActivity
 
 
 
-    public void setList(){
+    public void start(){
+
+        Intent i = getIntent();
+        String check_intent = i.getStringExtra("goback");
+        String check_intent_string = "from_detail";
+
+        // Werte aus Detail_Activity auslesen. Wenn Die Mainactivity von der DetailActivity ausgelesen wird, ist der Returnstring "from_detail" und die OverviewFragment wird geladen
+
+        if(check_intent.equals(check_intent_string)){
+            overview();
+        }else{
+            allgemeines();
+        }
 
     }
 
