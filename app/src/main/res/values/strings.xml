@@ -46,4 +46,8 @@
     <string name="title_item_list">Items</string>
     <string name="title_item_detail">Item Detail</string>
     <string name="title_activity_settings">Einstellungen</string>
+
+    <!-- TODO: Strings für Einstellungen -->
+    <string name="setting_head">Einstellungen</string>
+    <string name="setting_reset_button">Einstellungen zurücksetzten</string>
 </resources>

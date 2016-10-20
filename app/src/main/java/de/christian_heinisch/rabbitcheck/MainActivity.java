@@ -107,13 +107,20 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        /*if (id == R.id.action_settings) {
+        if (id == R.id.action_settings) {
 
             gobackcound = gobackcound + 1;
             titelleiste("Einstellungen");
+            SettingFragment settingFragment = new SettingFragment();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(
+                    R.id.content_main,
+                    settingFragment,
+                    settingFragment.getTag()
+            ).commit();
 
             return true;
-        }else */if(id == R.id.action_about){
+        }else if(id == R.id.action_about){
 
             gobackcound = gobackcound + 1;
             titelleiste("Über diese APP");
@@ -211,7 +218,6 @@ public class MainActivity extends AppCompatActivity
 
     public void overview() {
 
-        gobackcound = gobackcound + 1;
         titelleiste("Übersicht");
 
         OverviewFragment overviewFragment = new OverviewFragment();
@@ -248,15 +254,19 @@ public class MainActivity extends AppCompatActivity
 
     public void start(){
 
-        Intent i = getIntent();
-        String check_intent = i.getStringExtra("goback");
-        String check_intent_string = "from_detail";
+        try {
+            Intent i = getIntent();
+            String check_intent = i.getStringExtra("goback");
+            String check_intent_string = "from_detail";
 
-        // Werte aus Detail_Activity auslesen. Wenn Die Mainactivity von der DetailActivity ausgelesen wird, ist der Returnstring "from_detail" und die OverviewFragment wird geladen
+            // Werte aus Detail_Activity auslesen. Wenn Die Mainactivity von der DetailActivity ausgelesen wird, ist der Returnstring "from_detail" und die OverviewFragment wird geladen
 
-        if(check_intent.equals(check_intent_string)){
-            overview();
-        }else{
+            if(check_intent.equals(check_intent_string)){
+                overview();
+            }else{
+                allgemeines();
+            }
+        } catch( Exception e){
             allgemeines();
         }
 
