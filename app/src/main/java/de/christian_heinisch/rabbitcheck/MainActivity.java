@@ -1,6 +1,7 @@
 package de.christian_heinisch.rabbitcheck;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
@@ -12,6 +13,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public static InputStream is;
+    public int gobackcound = 0;
 
 
 
@@ -63,6 +66,7 @@ public class MainActivity extends AppCompatActivity
 
     public void overview() {
 
+        gobackcound = gobackcound + 1;
         titelleiste("Übersicht");
 
         OverviewFragment overviewFragment = new OverviewFragment();
@@ -71,17 +75,29 @@ public class MainActivity extends AppCompatActivity
                 R.id.content_main,
                 overviewFragment,
                 overviewFragment.getTag()
-        ).commit();
+        )
+                .addToBackStack(null)
+                .commit();
     }
 
 
     @Override
     public void onBackPressed() {
+
+        if (gobackcound > 0){
+            gobackcound = gobackcound - 1;
+            super.onBackPressed();
+        }else{
+            moveTaskToBack(true);
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(1);
+        }
+/*
         if (getFragmentManager().getBackStackEntryCount() > 0) {
             getFragmentManager().popBackStack();
         } else {
             super.onBackPressed();
-        }
+        }*/
     }
 
     @Override
@@ -142,6 +158,8 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_uebersicht) {
 
+            gobackcound = gobackcound + 1;
+
             titelleiste(getResources().getString(R.string.uebersicht_head));
 
             OverviewFragment overviewFragment = new OverviewFragment();
@@ -155,6 +173,8 @@ public class MainActivity extends AppCompatActivity
                     .commit();
 
         } else if (id == R.id.nav_checkliste) {
+
+            gobackcound = gobackcound + 1;
 
             titelleiste(getResources().getString(R.string.checklist_header));
 
@@ -178,6 +198,7 @@ public class MainActivity extends AppCompatActivity
 
     public void start(){
 
+        gobackcound = gobackcound + 1;
         titelleiste(getResources().getString(R.string.allgemeines_head));
 
         AllgemeinesFragment allgemeinesFragment = new AllgemeinesFragment();
@@ -190,20 +211,6 @@ public class MainActivity extends AppCompatActivity
                 .addToBackStack(null)
                 .commit();
     }
-
-    public void start2(){
-
-        OverviewFragment overviewFragment = new OverviewFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(
-                R.id.content_main,
-                overviewFragment,
-                overviewFragment.getTag()
-        )
-                .addToBackStack(null)
-                .commit();
-    }
-
 
     public void getVersion(){
         PackageInfo pInfo = null;
@@ -230,13 +237,4 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-
-   /* @Override
-    public void onBackPressed() {
-        if (getFragmentManager().getBackStackEntryCount() > 0) {
-            getFragmentManager().popBackStack();
-        } else {
-            super.onBackPressed();
-        }
-    }*/
 }
