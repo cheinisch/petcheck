@@ -76,7 +76,13 @@ public class CheckFragment extends Fragment {
     public void rechnen(){
 
 
-        anzahlTiere = Integer.parseInt(zahl.getText().toString());
+        String new_zahl = zahl.getText().toString();
+
+
+        // String in einen Int konvertieren
+        anzahlTiere = Integer.parseInt(new_zahl);
+
+        // Warntext in Variable speichern
         TextView warnung = (TextView) rootview.findViewById(R.id.textWarnung);
 
 
