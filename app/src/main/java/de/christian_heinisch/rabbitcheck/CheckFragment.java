@@ -75,7 +75,7 @@ public class CheckFragment extends Fragment {
 
     public void rechnen(){
 
-
+        // Schreibe Textfeld in einen String
         String new_zahl = zahl.getText().toString();
 
 
