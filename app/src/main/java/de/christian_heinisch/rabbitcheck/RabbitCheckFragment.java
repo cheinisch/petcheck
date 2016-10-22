@@ -15,9 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class CheckFragment extends Fragment {
+public class RabbitCheckFragment extends Fragment {
 
-    public CheckFragment() {
+    public RabbitCheckFragment() {
         // Required empty public constructor
     }
 
@@ -42,7 +42,7 @@ public class CheckFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        rootview = inflater.inflate(R.layout.fragment_check, container, false);
+        rootview = inflater.inflate(R.layout.fragment_rabbit_check, container, false);
 
         // Checkboxen und Textfelder anlegen
         checkBoxHeu = (CheckBox) rootview.findViewById(R.id.checkBoxHeu);
@@ -75,9 +75,16 @@ public class CheckFragment extends Fragment {
 
     public void rechnen(){
 
-        // Schreibe Textfeld in einen String
-        String new_zahl = zahl.getText().toString();
+        // Schreibe Textfeld in einen String und definiere einen neuen String
+        String old_zahl = zahl.getText().toString();
+        String new_zahl;
 
+        // Prüfe länge des Strings. Wenn mehr als 3 Stellen kürze diesen herrunter auf 3 stellen
+        if(old_zahl.length() > 3){
+            new_zahl = old_zahl.substring(0,3);
+        }else{
+            new_zahl = old_zahl;
+        }
 
         // String in einen Int konvertieren
         anzahlTiere = Integer.parseInt(new_zahl);
@@ -89,7 +96,7 @@ public class CheckFragment extends Fragment {
         // Prüfe anzahl der Tiere und wenn anzahl größer als maxTiere ist, dann setzte den Wert auf maxTiere
         if(anzahlTiere > maxTiere){
             anzahlTiere = maxTiere;
-            zahl.setText("" + maxTiere);
+            zahl.setText("" + anzahlTiere);
         }
 
 

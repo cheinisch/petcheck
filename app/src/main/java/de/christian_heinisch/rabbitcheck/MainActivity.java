@@ -1,36 +1,21 @@
 package de.christian_heinisch.rabbitcheck;
 
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-
-import de.christian_heinisch.rabbitcheck.data.CustomUserAdapter;
-import de.christian_heinisch.rabbitcheck.data.ListItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -117,7 +102,9 @@ public class MainActivity extends AppCompatActivity
                     R.id.content_main,
                     settingFragment,
                     settingFragment.getTag()
-            ).commit();
+            )
+                    .addToBackStack(null)
+                    .commit();
 
             return true;
         }else if(id == R.id.action_about){
@@ -131,7 +118,9 @@ public class MainActivity extends AppCompatActivity
                     R.id.content_main,
                     aboutFragment,
                     aboutFragment.getTag()
-            ).commit();
+            )
+                    .addToBackStack(null)
+                    .commit();
         }
 
         return super.onOptionsItemSelected(item);
@@ -183,12 +172,12 @@ public class MainActivity extends AppCompatActivity
 
             titelleiste(getResources().getString(R.string.checklist_header));
 
-            CheckFragment checkFragment = new CheckFragment();
+            RabbitCheckFragment rabbitCheckFragment = new RabbitCheckFragment();
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction().replace(
                     R.id.content_main,
-                    checkFragment,
-                    checkFragment.getTag()
+                    rabbitCheckFragment,
+                    rabbitCheckFragment.getTag()
             )
                     .addToBackStack(null)
                     .commit();
