@@ -51,7 +51,7 @@
     <string name="setting_head">Settings</string>
     <string name="setting_reset_button">Reset Data</string>
 
-    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_about">About this APP</string>
     <string name="section_format">Hello World from section: %1$d</string>
 
 </resources>

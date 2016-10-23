@@ -85,49 +85,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }*/
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-
-            gobackcound = gobackcound + 1;
-            titelleiste("Einstellungen");
-            SettingFragment settingFragment = new SettingFragment();
-            FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(
-                    R.id.content_main,
-                    settingFragment,
-                    settingFragment.getTag()
-            )
-                    .addToBackStack(null)
-                    .commit();
-
-            return true;
-        }else if(id == R.id.action_about){
-
-            gobackcound = gobackcound + 1;
-            titelleiste("Über diese APP");
-
-            AboutFragment aboutFragment = new AboutFragment();
-            FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(
-                    R.id.content_main,
-                    aboutFragment,
-                    aboutFragment.getTag()
-            )
-                    .addToBackStack(null)
-                    .commit();
-
-            /*about();*/
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -186,7 +144,7 @@ public class MainActivity extends AppCompatActivity
                     .commit();
 
         }else if(id == R.id.action_about){
-
+/*
             gobackcound = gobackcound + 1;
             titelleiste("Über diese APP");
 
@@ -200,7 +158,7 @@ public class MainActivity extends AppCompatActivity
                     .addToBackStack(null)
                     .commit();
 
-            /*about();*/
+            */about();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

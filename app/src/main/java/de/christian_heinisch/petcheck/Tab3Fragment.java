@@ -12,36 +12,31 @@ import android.widget.TextView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AboutFragment extends Fragment {
+public class Tab3Fragment extends Fragment {
 
 
-    View rootview;
-
-
-    public AboutFragment() {
+    public Tab3Fragment() {
         // Required empty public constructor
     }
 
+    View rootview;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-
-        rootview = inflater.inflate(R.layout.fragment_about, container, false);
+        rootview = inflater.inflate(R.layout.fragment_tab3, container, false);
         setVersion();
         return rootview;
     }
 
-    public void setVersion() {
+    public void setVersion(){
 
         String versionString = BuildConfig.VERSION_NAME;
         int versioncode = BuildConfig.VERSION_CODE;
-        TextView version = (TextView) rootview.findViewById(R.id.textVersion);
+        TextView version = (TextView) rootview.findViewById(R.id.textVersion_new);
         version.setText("Version " + versionString + " (" + versioncode + ")");
     }
-
 
 
 }
