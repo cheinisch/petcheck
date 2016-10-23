@@ -26,17 +26,7 @@ public class Tab3Fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootview = inflater.inflate(R.layout.fragment_tab3, container, false);
-        setVersion();
         return rootview;
     }
-
-    public void setVersion(){
-
-        String versionString = BuildConfig.VERSION_NAME;
-        int versioncode = BuildConfig.VERSION_CODE;
-        TextView version = (TextView) rootview.findViewById(R.id.textVersion_new);
-        version.setText("Version " + versionString + " (" + versioncode + ")");
-    }
-
 
 }

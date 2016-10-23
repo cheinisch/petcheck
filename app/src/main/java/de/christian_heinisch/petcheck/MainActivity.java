@@ -144,21 +144,7 @@ public class MainActivity extends AppCompatActivity
                     .commit();
 
         }else if(id == R.id.action_about){
-/*
-            gobackcound = gobackcound + 1;
-            titelleiste("Über diese APP");
-
-            AboutFragment aboutFragment = new AboutFragment();
-            FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(
-                    R.id.content_main,
-                    aboutFragment,
-                    aboutFragment.getTag()
-            )
-                    .addToBackStack(null)
-                    .commit();
-
-            */about();
+            about();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
