@@ -129,7 +129,7 @@ public class RabbitCheckFragment extends Fragment {
 
             warnung.setLayoutParams(params);
 
-            anzahlQMErgebnis = anzahlTiere * 2;
+            anzahlQMErgebnis = anzahlTiere * 3;
 
             String QM = anzahlQMErgebnis + " qm²";
 
