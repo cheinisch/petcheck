@@ -19,7 +19,7 @@
     <!-- TODO: Strings für Allgemeines -->
     <string name="allgemeines_head">Allgemeines</string>
     <string name="allgemeines_title">Kaninchen</string>
-    <string name="allgemeines_text">Das Hauskaninchen (Oryctolagus cuniculus forma domestica) ist die domestizierte Form des Wildkaninchens. Es wird sowohl als Nutztier zur Fleisch- und Pelzproduktion als auch als Heimtier gehalten. Umgangssprachlich ist auch die Bezeichnung „Stallhase“ gebräuchlich.</string>
+    <string name="allgemeines_text">Hallo, ich bin die Abby</string>
 
     <!-- TODO: Übersicht -->
     <string name="uebersicht_head">Übersicht</string>
