@@ -28,7 +28,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textAppName"
-                        android:textAppearance="@android:style/TextAppearance.Material.Headline" />
+                        android:textAppearance="@android:style/TextAppearance.Holo.Large" />
                 </TableRow>
 
                 <TableRow
@@ -40,7 +40,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView9"
-                        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                        android:textAppearance="@android:style/TextAppearance.Holo.Large"
                         android:textStyle="normal|bold|italic"/>
                 </TableRow>
 
@@ -75,7 +75,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView12"
-                        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                        android:textAppearance="@android:style/TextAppearance.Holo.Large"
                         android:textStyle="normal|bold|italic" />
                 </TableRow>
 
