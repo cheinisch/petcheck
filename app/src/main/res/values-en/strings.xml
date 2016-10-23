@@ -17,7 +17,8 @@
     <!-- TODO: Strings für Allgemeines -->
     <string name="allgemeines_head">Information</string>
     <string name="allgemeines_title">Rabbit</string>
-    <string name="allgemeines_text">Some information about the Rabbit</string>
+    <string name="allgemeines_text">Some information about rabbits</string>
+    <string name="allgemeines_text_info">You need more than one rabbit</string>
 
     <!-- TODO: Übersicht -->
     <string name="uebersicht_head">Overview</string>

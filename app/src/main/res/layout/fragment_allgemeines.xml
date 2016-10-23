@@ -38,6 +38,14 @@
                 android:id="@+id/text_allgemeines_text"
                 android:textAppearance="@android:style/TextAppearance.Holo.Medium" />
 
+            <TextView
+                android:text="@string/allgemeines_text_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_allgemeines_text_info"
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                android:textStyle="normal|bold|italic" />
+
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
