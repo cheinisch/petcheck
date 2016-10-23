@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import java.io.InputStream;
 
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -121,6 +122,8 @@ public class MainActivity extends AppCompatActivity
             )
                     .addToBackStack(null)
                     .commit();
+
+            /*about();*/
         }
 
         return super.onOptionsItemSelected(item);
@@ -259,6 +262,11 @@ public class MainActivity extends AppCompatActivity
             allgemeines();
         }
 
+    }
+
+    public void about(){
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
     }
 
 }
