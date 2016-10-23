@@ -8,8 +8,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 
-    <group android:id="@+id/group_feature"
-        android:checkableBehavior="single">
+    <group android:id="@+id/group_feature">
         <item
             android:id="@+id/nav_allgemeines"
             android:icon="@drawable/ic_home"
