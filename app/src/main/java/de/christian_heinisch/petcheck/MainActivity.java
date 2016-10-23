@@ -77,13 +77,13 @@ public class MainActivity extends AppCompatActivity
         }
 
     }
-
+/*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -185,6 +185,22 @@ public class MainActivity extends AppCompatActivity
                     .addToBackStack(null)
                     .commit();
 
+        }else if(id == R.id.action_about){
+
+            gobackcound = gobackcound + 1;
+            titelleiste("Über diese APP");
+
+            AboutFragment aboutFragment = new AboutFragment();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(
+                    R.id.content_main,
+                    aboutFragment,
+                    aboutFragment.getTag()
+            )
+                    .addToBackStack(null)
+                    .commit();
+
+            /*about();*/
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

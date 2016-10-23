@@ -8,19 +8,29 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 
-    <group android:checkableBehavior="single">
+    <group android:id="@+id/group_feature"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_allgemeines"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_home"
             android:title="@string/navigation_allgemeines" />
         <item
             android:id="@+id/nav_uebersicht"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_info"
             android:title="@string/navigation_uebersicht" />
         <item
             android:id="@+id/nav_checkliste"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_check"
             android:title="@string/navigation_checkliste" />
+    </group>
+    <group android:id="@+id/group_app">
+        <item
+                android:id="@+id/action_about"
+                android:orderInCategory="100"
+                android:title="@string/action_about"
+                app:showAsAction="never"
+                android:icon="@drawable/ic_help" />
+
     </group>
 
 </menu>
