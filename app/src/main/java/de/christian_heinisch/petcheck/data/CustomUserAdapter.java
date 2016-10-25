@@ -58,7 +58,7 @@ public class CustomUserAdapter extends ArrayAdapter<ListItem> {
 
     public void openitem(View view){
 
-        
+
         ListItem user = (ListItem) view.getTag();
 
         // Erstelle einen neuen Intent und weiße ihm eine Actvity zu
