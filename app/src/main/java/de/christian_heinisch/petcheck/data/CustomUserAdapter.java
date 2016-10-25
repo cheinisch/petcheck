@@ -58,7 +58,10 @@ public class CustomUserAdapter extends ArrayAdapter<ListItem> {
 
     public void openitem(View view){
 
+        
         ListItem user = (ListItem) view.getTag();
+
+        // Erstelle einen neuen Intent und weiße ihm eine Actvity zu
         Intent intent = new Intent(getContext(), ItemDetailActivity.class);
 
         //Werte an DetailActivity übergeben
@@ -66,7 +69,7 @@ public class CustomUserAdapter extends ArrayAdapter<ListItem> {
         intent.putExtra("Beschreibung", user.langtext);
         intent.putExtra("URL", user.bild);
 
-
+        // Starte Activity
         getContext().startActivity(intent);
 
     }
