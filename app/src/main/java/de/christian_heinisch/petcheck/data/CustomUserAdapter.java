@@ -35,7 +35,7 @@ public class CustomUserAdapter extends ArrayAdapter<ListItem> {
         TextView tvBeschreibung = (TextView) convertView.findViewById(R.id.textBeschreibung);
 
         tvName.setText(user.name);
-        tvBeschreibung.setText(user.beschreibung);
+        //tvBeschreibung.setText(user.beschreibung);
 
         tvName.setTag(user);
         tvName.setOnClickListener(new View.OnClickListener(){
