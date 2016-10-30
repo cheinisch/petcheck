@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_allgemeines) {
 
-
+            System.out.println("allgemeines");
             // GoBackcound wird für jeden Klick auf ein Menüeintrag hochgesetzt
             gobackcound = gobackcound + 1;
 

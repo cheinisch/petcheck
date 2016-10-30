@@ -32,10 +32,14 @@ public class CustomUserAdapter extends ArrayAdapter<ListItem> {
         }
 
         final TextView tvName = (TextView) convertView.findViewById(R.id.tvName);
-       // TextView tvBeschreibung = (TextView) convertView.findViewById(R.id.textBeschreibung);
+        TextView tvBeschreibung = (TextView) convertView.findViewById(R.id.textBeschreibung);
 
         tvName.setText(user.name);
-        //tvBeschreibung.setText(user.beschreibung);
+        tvBeschreibung.setText(user.beschreibung);
+
+        if(tvBeschreibung == null){
+            tvBeschreibung.setHeight(0);
+        }
 
         tvName.setTag(user);
         tvName.setOnClickListener(new View.OnClickListener(){
@@ -45,12 +49,12 @@ public class CustomUserAdapter extends ArrayAdapter<ListItem> {
             }
         });
 
-        /*tvBeschreibung.setTag(user);
+        tvBeschreibung.setTag(user);
         tvBeschreibung.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 openitem(view);
             }
-        });*/
+        });
 
         return convertView;
 
