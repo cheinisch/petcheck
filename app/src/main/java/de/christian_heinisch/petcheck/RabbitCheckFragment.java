@@ -138,7 +138,7 @@ public class RabbitCheckFragment extends Fragment {
         }else{
             anzahlQMErgebnis = 15;
             // Schleife für die Berechnung des + 10% Anteils
-            for(int s=0;s<=anzahlTiere;s++ ){
+            for(int s=0;s<=anzahlTiere-5;s++ ){
                 anzahlQMErgebnis = anzahlQMErgebnis * 1.10;
             }
 
