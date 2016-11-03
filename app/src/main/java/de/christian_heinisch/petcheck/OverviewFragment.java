@@ -122,24 +122,6 @@ public class OverviewFragment extends Fragment {
 
     }
 
-    /*public void openItem(View view){
-
-
-        ListItem user = (ListItem) view.getTag();
-
-        // Erstelle einen neuen Intent und weise ihm eine Actvity zu
-        Intent intent = new Intent(getContext(), ItemDetailActivity.class);
-
-        //Werte an DetailActivity übergeben
-        intent.putExtra("Titelleiste", user.name);
-        intent.putExtra("Beschreibung", user.langtext);
-        intent.putExtra("URL", user.bild);
-
-        // Starte Activity
-        getContext().startActivity(intent);
-
-    }*/
-
     public void openItem(View view, ListItem listitem){
 
         String title = listitem.getName();
