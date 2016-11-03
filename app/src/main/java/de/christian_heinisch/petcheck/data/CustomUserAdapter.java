@@ -36,7 +36,7 @@ public class CustomUserAdapter extends ArrayAdapter<ListItem> {
 
         tvName.setText(user.name);
         tvBeschreibung.setText(user.beschreibung);
-
+/*
         if(tvBeschreibung == null){
             tvBeschreibung.setHeight(0);
         }
@@ -55,7 +55,7 @@ public class CustomUserAdapter extends ArrayAdapter<ListItem> {
                 openitem(view);
             }
         });
-
+*/
         return convertView;
 
     }
@@ -65,7 +65,7 @@ public class CustomUserAdapter extends ArrayAdapter<ListItem> {
 
         ListItem user = (ListItem) view.getTag();
 
-        // Erstelle einen neuen Intent und weiße ihm eine Actvity zu
+        // Erstelle einen neuen Intent und weise ihm eine Actvity zu
         Intent intent = new Intent(getContext(), ItemDetailActivity.class);
 
         //Werte an DetailActivity übergeben

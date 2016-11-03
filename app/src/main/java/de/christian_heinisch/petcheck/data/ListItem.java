@@ -24,4 +24,20 @@ public class ListItem {
         this.langtext = langtext;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getBeschreibung() {
+        return beschreibung;
+    }
+
+    public String getBild() {
+        return bild;
+    }
+
+    public String getLangtext() {
+        return langtext;
+    }
+
 }

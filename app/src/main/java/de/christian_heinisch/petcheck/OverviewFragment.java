@@ -1,6 +1,7 @@
 package de.christian_heinisch.petcheck;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 
@@ -69,6 +71,15 @@ public class OverviewFragment extends Fragment {
         ListView listView = (ListView) rootview.findViewById(R.id.listOverview);
         listView.setAdapter(adapter);
 
+        //TODO: handle title, description, url, fulltext of listitem to openIten(...)
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ListItem listitem = (ListItem) parent.getAdapter().getItem(position);
+                openItem(view, listitem);
+            }
+        });
+
 
     }
     public ArrayList<ListItem> getUsers() throws JSONException {
@@ -108,6 +119,44 @@ public class OverviewFragment extends Fragment {
             return null;
         }
         return json;
+
+    }
+
+    /*public void openItem(View view){
+
+
+        ListItem user = (ListItem) view.getTag();
+
+        // Erstelle einen neuen Intent und weise ihm eine Actvity zu
+        Intent intent = new Intent(getContext(), ItemDetailActivity.class);
+
+        //Werte an DetailActivity übergeben
+        intent.putExtra("Titelleiste", user.name);
+        intent.putExtra("Beschreibung", user.langtext);
+        intent.putExtra("URL", user.bild);
+
+        // Starte Activity
+        getContext().startActivity(intent);
+
+    }*/
+
+    public void openItem(View view, ListItem listitem){
+
+        String title = listitem.getName();
+        String description = listitem.getBeschreibung();
+        String url = listitem.getBild();
+        String fulltext = listitem.getLangtext();
+
+        // Erstelle einen neuen Intent und weise ihm eine Actvity zu
+        Intent intent = new Intent(getContext(), ItemDetailActivity.class);
+
+        //Werte an DetailActivity übergeben
+        intent.putExtra("Titelleiste", title);
+        intent.putExtra("URL", url);
+        intent.putExtra("Beschreibung", fulltext);
+
+        // Starte Activity
+        getContext().startActivity(intent);
 
     }
 
