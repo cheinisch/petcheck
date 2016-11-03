@@ -22,7 +22,7 @@ public class RabbitCheckFragment extends Fragment {
     }
 
     private int anzahlTiere;
-    private int anzahlQMErgebnis;
+    private double anzahlQMErgebnis;
     private Button button;
     CheckBox checkBoxHeu;
     CheckBox checkBoxStreu;
@@ -129,7 +129,22 @@ public class RabbitCheckFragment extends Fragment {
 
             warnung.setLayoutParams(params);
 
+
+        /* Prüfe die Anzahl der Tiere für die Platzberechnung.
+        Bei ein bis fünf Tieren werden 3 qm² benötigt. Ab dem 6. Tier werden 10% mehr Platz benötigt
+         */
+        if(anzahlTiere <= 5){
             anzahlQMErgebnis = anzahlTiere * 3;
+        }else{
+            anzahlQMErgebnis = 15;
+            // Schleife für die Berechnung des + 10% Anteils
+            for(int s=0;s<=anzahlTiere;s++ ){
+                anzahlQMErgebnis = anzahlQMErgebnis * 1.10;
+            }
+
+            // Zahlen auf zwei Stellen nach dem Komma runden
+            anzahlQMErgebnis = Math.round(100.0 * anzahlQMErgebnis) / 100.0;
+        }
 
             String QM = anzahlQMErgebnis + " qm²";
 
