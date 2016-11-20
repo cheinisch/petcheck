@@ -66,7 +66,7 @@ public class OverviewFragment extends Fragment {
         MainActivity activity = new MainActivity();
 
         ArrayList<ListItem> arrayOfUsers = null;
-        arrayOfUsers = getUsers();
+        arrayOfUsers = getContent();
         CustomUserAdapter adapter = new CustomUserAdapter(getActivity(), arrayOfUsers);
         ListView listView = (ListView) rootview.findViewById(R.id.listOverview);
         listView.setAdapter(adapter);
@@ -82,7 +82,7 @@ public class OverviewFragment extends Fragment {
 
 
     }
-    public ArrayList<ListItem> getUsers() throws JSONException {
+    public ArrayList<ListItem> getContent() throws JSONException {
         ArrayList<ListItem> listitems = new ArrayList<ListItem>();
 
         JSONArray jsonarray = new JSONArray(loadJSONFromAsset());
