@@ -12,13 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textDetailHead"
-        android:textAppearance="@android:style/TextAppearance.Material.Title" />
+        android:textAppearance="@android:style/TextAppearance.Material.Headline" />
 
     <TextView
         android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textDetailContent"
-        android:textAppearance="@android:style/TextAppearance.Material.Medium" />
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
 
 </LinearLayout>
