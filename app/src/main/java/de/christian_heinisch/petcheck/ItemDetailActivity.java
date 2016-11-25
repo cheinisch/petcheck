@@ -66,7 +66,10 @@ public class ItemDetailActivity extends AppCompatActivity {
         TextView content = (TextView) findViewById(R.id.textDetailContent);
         content.setText(langtext);
 
-        titelleiste(titel);
+        TextView headline = (TextView) findViewById(R.id.textDetailHead);
+        headline.setText(titel);
+
+        titelleiste("");
 
 
         img = (ImageView) findViewById(R.id.app_bar_image);
