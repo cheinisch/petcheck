@@ -36,26 +36,7 @@ public class CustomUserAdapter extends ArrayAdapter<ListItem> {
 
         tvName.setText(user.name);
         tvBeschreibung.setText(user.beschreibung);
-/*
-        if(tvBeschreibung == null){
-            tvBeschreibung.setHeight(0);
-        }
 
-        tvName.setTag(user);
-        tvName.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                openitem(view);
-
-            }
-        });
-
-        tvBeschreibung.setTag(user);
-        tvBeschreibung.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                openitem(view);
-            }
-        });
-*/
         return convertView;
 
     }
