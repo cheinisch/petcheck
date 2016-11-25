@@ -50,7 +50,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/text_allgemeines_text_info"
                 android:textAppearance="@android:style/TextAppearance.Material.Medium"
-                android:textStyle="normal|bold|italic" />
+                android:textStyle="normal|bold|italic"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
