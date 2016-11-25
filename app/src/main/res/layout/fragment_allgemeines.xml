@@ -21,7 +21,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_allgemeines_title"
-                android:textAppearance="@android:style/TextAppearance.Holo.Medium" />
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -29,14 +31,18 @@
                 app:srcCompat="@drawable/image_rabbit_abby"
                 android:id="@+id/imageViewAllgemeines"
                 android:cropToPadding="false"
-                android:adjustViewBounds="true" />
+                android:adjustViewBounds="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
 
             <TextView
                 android:text="@string/allgemeines_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_allgemeines_text"
-                android:textAppearance="@android:style/TextAppearance.Holo.Medium" />
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
 
             <TextView
                 android:text="@string/allgemeines_text_info"
@@ -44,7 +50,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/text_allgemeines_text_info"
                 android:textAppearance="@android:style/TextAppearance.Holo.Medium"
-                android:textStyle="normal|bold|italic" />
+                android:textStyle="normal|bold|italic"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>

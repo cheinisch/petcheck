@@ -6,23 +6,24 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TableLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="10dp">
+        android:layout_height="match_parent">
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
             <TextView
                 android:text="@string/text_Releasenote"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textReleasenote"
-                android:textAppearance="@android:style/TextAppearance.Holo.Medium"/>
-        </TableRow>
-
-    </TableLayout>
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 
 </FrameLayout>
