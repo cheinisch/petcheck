@@ -17,7 +17,29 @@
             android:paddingLeft="10dp"/>
 
     <TextView
-        android:text="Bilder:\nWikipedia Common\nEigene Bilder"
+        android:text="@string/quellen_texte_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView14"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:text="@string/quellen_texte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView12"
+        android:paddingLeft="10dp"/>
+
+    <TextView
+        android:text="@string/quellen_bilder_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView15"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp" />
+
+    <TextView
+        android:text="@string/quellen_texte"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView6"
@@ -29,7 +51,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/text_Quelle_Bib"
         android:textAppearance="@android:style/TextAppearance.Holo.Medium"
-        android:paddingLeft="10dp"/>
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp" />
 
     <TextView
         android:text="Picasso - Apache License v2.0"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Haustiercheck: Kaninchen</string>
+    <string name="app_name">Haustiercheck</string>
 
     <!-- TODO: Strings für die Navigation -->
     <string name="navigation_head">Haustiercheck:</string>
@@ -16,18 +16,18 @@
     <string name="action_settings">Einstellungen</string>
     <string name="action_about">Über diese App</string>
 
-    <!-- TODO: Strings für Allgemeines -->
+    <!-- Strings für Allgemeines -->
     <string name="allgemeines_head">Allgemeines</string>
     <string name="allgemeines_title">Kaninchen</string>
     <string name="allgemeines_text">Die Kaninchen gehören zur Gattung der Hasen. Zu Ihnen gehören die Wild- und Hauskaninchen, sowie noch ein paar weitere verwandte Arten.\n\nIn der freien Natur leben diese Tiere in großen Gruppen. Ihr Zuhause sind die unterirdischen Gänge im Wald und auf den Wiesen. Der Kaninchenbau ist mehrere Kilometer groß. Das Revier wird durch Kot und Urin abgegrenzt.\n\nKaninchen sind Nachtaktive Tiere und gehen im Schutz der Dämmerung auf Nahrungssuche. Hierbei bleiben sie jedoch immer im Schutze des Baus, um sich vor Fressfeinden schnell in Sicherheit zu bringen. Die Tiere sind relativ Reviertreu und bleiben auch in ihrem Revier. Fremde Weibchen und junge Kaninchen werden in die Gruppe aufgenommen, während Rammler aus dem Revier verjagt werden.\n\nMan nimmt an, dass die Kaninchen einen festen Partner im Rudel haben. Aber es muss nicht sein, das der Ranghöchste Rammler mit dem Ranghöchsten Weibchen zusammenlebt. Die Rangordnung von Männchen und Weibchen hat eine eigene Bedeutung.</string>
     <string name="allgemeines_text_info">Wenn man so drüber nachdenkt, sollte einem klar sein, dass die Tiere Rudeltiere sind und daher niemals alleine gehalten werden sollten.</string>
 
-    <!-- TODO: Übersicht -->
+    <!-- Übersicht -->
     <string name="uebersicht_head">Übersicht</string>
     <string name="uebersicht_title"></string>
 
 
-    <!-- TODO: Strings für Fragment Checliste -->
+    <!-- Strings für Fragment Checkliste -->
     <string name="checklist_header">Checkliste</string>
     <string name="checklist_title">Meine Checkliste</string>
 
@@ -47,6 +47,12 @@
     </string>
     <string name="title_item_list">Items</string>
     <string name="title_item_detail">Item Detail</string>
+    <!--Quellenseite-->
+    <string name="quellen_texte_title">Texte:</string>
+    <string name="quellen_texte">Kaninchenwiese.de\ndiebrain.de</string>
+    <string name="quellen_bilder_title">Bilder:</string>
+    <string name="quellen_bilder">Wikipedia Common\nEigene Bilder</string>
+
     <string name="title_activity_settings">Einstellungen</string>
 
     <!-- TODO: Strings für Einstellungen -->
