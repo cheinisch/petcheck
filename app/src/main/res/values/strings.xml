@@ -47,6 +47,10 @@
     </string>
     <string name="title_item_list">Items</string>
     <string name="title_item_detail">Item Detail</string>
+    <!-- Mitwirkende -->
+    <string name="mitwirkende_title">Mitwirkende</string>
+    <string name="mitwirkende">Christian Heinisch</string>
+    <string name="version">Version</string>
     <!--Quellenseite-->
     <string name="quellen_title">Inhalte</string>
     <string name="quellen_texte_title">Texte:</string>
