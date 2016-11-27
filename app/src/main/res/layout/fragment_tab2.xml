@@ -12,7 +12,7 @@
             android:text="@string/quellen_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView7"
+            android:id="@+id/text_Quelle_Title"
             android:textAppearance="@android:style/TextAppearance.Holo.Medium"
             android:paddingLeft="10dp"/>
 

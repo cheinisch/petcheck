@@ -15,7 +15,7 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:text="Mitwirkende"
+                android:text="@string/mitwirkende_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView9"
@@ -28,7 +28,7 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:text="Christian Heinisch"
+                android:text="@string/mitwirkende"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView11"
@@ -40,7 +40,7 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:text="Version"
+                android:text="@string/version"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textVersion"
