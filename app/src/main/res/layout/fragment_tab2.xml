@@ -9,7 +9,7 @@
 
 
         <TextView
-            android:text="Inhalte"
+            android:text="@string/quellen_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView7"
@@ -46,7 +46,7 @@
         android:paddingLeft="10dp"/>
 
     <TextView
-        android:text="Bibliotheken"
+        android:text="@string/quellen_bibliothek_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/text_Quelle_Bib"
@@ -55,7 +55,7 @@
         android:paddingTop="10dp" />
 
     <TextView
-        android:text="Picasso - Apache License v2.0"
+        android:text="@string/quellen_bibliothek"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView13"

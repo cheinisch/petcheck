@@ -48,10 +48,13 @@
     <string name="title_item_list">Items</string>
     <string name="title_item_detail">Item Detail</string>
     <!--Quellenseite-->
+    <string name="quellen_title">Inhalte</string>
     <string name="quellen_texte_title">Texte:</string>
     <string name="quellen_texte">Kaninchenwiese.de\ndiebrain.de</string>
     <string name="quellen_bilder_title">Bilder:</string>
     <string name="quellen_bilder">Wikipedia Common\nEigene Bilder</string>
+    <string name="quellen_bibliothek_title">Bibliotheken</string>
+    <string name="quellen_bibliothek">Picasso - Apache License v2.0</string>
 
     <string name="title_activity_settings">Einstellungen</string>
 
