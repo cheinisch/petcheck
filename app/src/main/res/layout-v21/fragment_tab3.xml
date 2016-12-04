@@ -21,8 +21,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textReleasenote"
                 android:textAppearance="@android:style/TextAppearance.Material.Medium"
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp" />
+                android:paddingRight="@dimen/abstand"
+                android:paddingLeft="@dimen/abstand" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 

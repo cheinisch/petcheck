@@ -14,36 +14,36 @@
             android:layout_height="wrap_content"
             android:id="@+id/text_Quelle_Title"
             android:textAppearance="@android:style/TextAppearance.Material.Title"
-            android:paddingLeft="10dp"/>
+            android:paddingLeft="@dimen/abstand"/>
 
     <TextView
         android:text="@string/quellen_texte_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView16"
-        android:paddingLeft="10dp"/>
+        android:paddingLeft="@dimen/abstand"/>
 
     <TextView
         android:text="@string/quellen_texte"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView12"
-        android:paddingLeft="10dp"/>
+        android:paddingLeft="@dimen/abstand"/>
 
     <TextView
         android:text="@string/quellen_bilder_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView17"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp" />
+        android:paddingLeft="@dimen/abstand"
+        android:paddingTop="@dimen/abstand" />
 
     <TextView
         android:text="@string/quellen_texte"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView6"
-        android:paddingLeft="10dp"/>
+        android:paddingLeft="@dimen/abstand"/>
 
     <TextView
         android:text="@string/quellen_bibliothek_title"
@@ -51,14 +51,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/text_Quelle_Bib"
         android:textAppearance="@android:style/TextAppearance.Material.Title"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp" />
+        android:paddingLeft="@dimen/abstand"
+        android:paddingTop="@dimen/abstand" />
 
     <TextView
         android:text="@string/quellen_bibliothek"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView13"
-        android:paddingLeft="10dp"/>
+        android:paddingLeft="@dimen/abstand"/>
 </LinearLayout>
 

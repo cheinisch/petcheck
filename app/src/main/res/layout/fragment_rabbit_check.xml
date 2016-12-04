@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="de.christian_heinisch.petcheck.RabbitCheckFragment"
-    android:id="@+id/Fragment_Check">
+    android:id="@+id/Fragment_Check"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
 
     <!-- TODO: Update blank fragment layout -->
 

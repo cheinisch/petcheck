@@ -1,52 +1,32 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="de.christian_heinisch.petcheck.Tab1Fragment">
+    tools:context="de.christian_heinisch.petcheck.Tab1Fragment"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/abstand"
+    android:paddingRight="@dimen/abstand">
 
     <!-- TODO: Update blank fragment layout -->
-    <TableLayout
+    <TextView
+        android:text="@string/mitwirkende_title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="10dp">
+        android:layout_height="wrap_content"
+        android:id="@+id/textView9"
+        android:textAppearance="@android:style/TextAppearance.Material.Title" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+    <TextView
+        android:text="@string/mitwirkende"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView11"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"/>
 
-            <TextView
-                android:text="@string/mitwirkende_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView9"
-                android:textAppearance="@android:style/TextAppearance.Material.Medium"
-                android:textStyle="normal|bold|italic"/>
-        </TableRow>
+    <TextView
+        android:text="@string/version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textVersion"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"/>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:text="@string/mitwirkende"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView11"
-                android:textAppearance="@android:style/TextAppearance.Material.Medium"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:text="@string/version"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textVersion"
-                android:textAppearance="@android:style/TextAppearance.Material.Medium"/>
-        </TableRow>
-
-    </TableLayout>
-
-</FrameLayout>
+</LinearLayout>

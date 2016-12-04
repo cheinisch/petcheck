@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/textDetailContent"
         android:textAppearance="@android:style/TextAppearance.Material.Medium"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp" />
+        android:paddingTop="@dimen/abstand"
+        android:paddingBottom="@dimen/abstand" />
 
 </LinearLayout>
