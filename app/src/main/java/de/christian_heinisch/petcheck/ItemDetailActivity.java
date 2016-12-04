@@ -114,8 +114,8 @@ public class ItemDetailActivity extends AppCompatActivity {
         // Titelbild der Detailseite setzten
         Picasso.with(this)
                 .load(url_load)
-                //.placeholder(R.drawable.ic_placeholder) // optional
-                //.error(R.drawable.ic_error_fallback)         // optional
+                .placeholder(R.drawable.ic_placeholder) // optional
+                .error(R.drawable.ic_error_fallback)         // optional
                 .fit()
                 .into(imageView);
 
