@@ -104,7 +104,8 @@ public class OverviewFragment extends Fragment {
 
         String sprache = Locale.getDefault().getLanguage();
         System.out.println(sprache);
-        String json_file = "rabbit-" + sprache + "-data.json";
+        //String json_file = "rabbit-" + sprache + "-data.json";
+        String json_file = "rabbit-data.json";
         try {
 
             InputStream is = getContext().getAssets().open(json_file);
