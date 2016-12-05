@@ -43,7 +43,7 @@
 
     <!-- TODO: Strings für Über diese App -->
     <string name="text_Releasenote">
-        Version 1.0\nErstes Release\nKaninchen eingefügt
+        Version 1.0.2\nKorrektor eines Bildes\n\nVersion 1.0.1\nKorrektor eines Bildes\n\nVersion 1.0\nErstes Release\nKaninchen eingefügt
     </string>
     <string name="title_item_list">Items</string>
     <string name="title_item_detail">Item Detail</string>
