@@ -3,10 +3,7 @@ package de.christian_heinisch.petcheck;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.ParcelFileDescriptor;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -85,10 +82,13 @@ public class OverviewFragment extends Fragment {
     public ArrayList<ListItem> getContent() throws JSONException {
         ArrayList<ListItem> listitems = new ArrayList<ListItem>();
 
-        JSONArray jsonarray = new JSONArray(loadJSONFromAsset());
+        // Läd JSON Daten aus der Datei in ein Objekt
+        JSONObject jsondata = new JSONObject(loadJSONFromAsset());
+        // Läd bestimmte Daten aus dem Objekt in ein Array
+        JSONArray jsonarraylist = jsondata.getJSONArray("listdata");
 
-        for (int i = 0; i < jsonarray.length(); i++) {
-            JSONObject obj = jsonarray.getJSONObject(i);
+        for (int i = 0; i < jsonarraylist.length(); i++) {
+            JSONObject obj = jsonarraylist.getJSONObject(i);
 
             String titel = obj.getString("Titel");
             String beschreibung = obj.getString("Beschreibung");
