@@ -5,7 +5,7 @@
     <string name="navigation_head">Haustiercheck:</string>
     <string name="navigation_sub">Kaninchen</string>
 
-
+    <string name="navigation_auswahl">Kaninchen</string>
     <string name="navigation_drawer_open">Navigation öffnen</string>
     <string name="navigation_drawer_close">Navigation schließen</string>
     <string name="navigation_allgemeines">Allgemeines</string>
@@ -68,5 +68,6 @@
 
     <string name="title_activity_about">Über diese App</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_select">Haustier auswählen</string>
 
 </resources>

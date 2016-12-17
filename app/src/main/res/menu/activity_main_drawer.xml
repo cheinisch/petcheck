@@ -3,11 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <Spinner
-        android:id="@+id/dynamic_spinner"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
-
+    <group android:id="@+id/group_select">
+        <item
+            android:id="@+id/nav_auswahl"
+            android:title="@string/navigation_auswahl" />
+    </group>
     <group android:id="@+id/group_feature">
         <item
             android:id="@+id/nav_allgemeines"
