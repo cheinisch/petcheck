@@ -1,6 +1,7 @@
 package de.christian_heinisch.petcheck;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -11,9 +12,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.io.InputStream;
 
@@ -25,6 +30,8 @@ public class MainActivity extends AppCompatActivity
 
     // Erstelle einen Zähler für GoBack mit dem Wert 0
     public int gobackcound = 0;
+
+    NavigationView navigationView;
 
 
 
@@ -42,11 +49,12 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
 
 
+        getPetName();
 
 
         start();
@@ -91,12 +99,15 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+
+
+
         int id = item.getItemId();
 
         if (id == R.id.nav_auswahl) {
-
+            /*
             Intent intent = new Intent(this, SelectActivity.class);
-            startActivity(intent);
+            startActivity(intent);*/
         }
 
         if (id == R.id.nav_allgemeines) {
@@ -233,6 +244,33 @@ public class MainActivity extends AppCompatActivity
     public void about(){
         Intent intent = new Intent(this, AboutActivity.class);
         startActivity(intent);
+    }
+
+    public void getPetName(){
+
+        SharedPreferences settings = this.getSharedPreferences("Petload", 0);
+
+        String Tiername = settings.getString("titel", "Kaninchen").toString();
+
+        System.out.println(Tiername);
+
+        Menu header=navigationView.getMenu();
+        MenuItem test = header.findItem(R.id.nav_auswahl);
+        test.setTitle(Tiername);
+
+
+    }
+
+    public String getpetdata(){
+
+        String json;
+
+        SharedPreferences settings = this.getSharedPreferences("Petload", 0);
+
+        json = settings.getString("json", "rabbit").toString();
+
+        return json;
+
     }
 
 }

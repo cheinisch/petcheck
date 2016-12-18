@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import de.christian_heinisch.petcheck.data.CustomUserAdapter;
-import de.christian_heinisch.petcheck.data.ListItem;
+import de.christian_heinisch.petcheck.data.ListItemOverview;
 
 
 
@@ -62,7 +62,7 @@ public class OverviewFragment extends Fragment {
 
         MainActivity activity = new MainActivity();
 
-        ArrayList<ListItem> arrayOfUsers = null;
+        ArrayList<ListItemOverview> arrayOfUsers = null;
         arrayOfUsers = getContent();
         CustomUserAdapter adapter = new CustomUserAdapter(getActivity(), arrayOfUsers);
         ListView listView = (ListView) rootview.findViewById(R.id.listOverview);
@@ -72,15 +72,15 @@ public class OverviewFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ListItem listitem = (ListItem) parent.getAdapter().getItem(position);
+                ListItemOverview listitem = (ListItemOverview) parent.getAdapter().getItem(position);
                 openItem(view, listitem);
             }
         });
 
 
     }
-    public ArrayList<ListItem> getContent() throws JSONException {
-        ArrayList<ListItem> listitems = new ArrayList<ListItem>();
+    public ArrayList<ListItemOverview> getContent() throws JSONException {
+        ArrayList<ListItemOverview> listitems = new ArrayList<ListItemOverview>();
 
         // Läd JSON Daten aus der Datei in ein Objekt
         JSONObject jsondata = new JSONObject(loadJSONFromAsset());
@@ -94,7 +94,7 @@ public class OverviewFragment extends Fragment {
             String beschreibung = obj.getString("Beschreibung");
             String URL = obj.getString("URL");
             String langtext = obj.getString("Langtext");
-            listitems.add(new ListItem(titel, beschreibung, URL, langtext));
+            listitems.add(new ListItemOverview(titel, beschreibung, URL, langtext));
         }
         return listitems;
     }
@@ -102,10 +102,9 @@ public class OverviewFragment extends Fragment {
     public String loadJSONFromAsset() {
         String json = null;
 
-        String sprache = Locale.getDefault().getLanguage();
-        System.out.println(sprache);
-        //String json_file = "rabbit-" + sprache + "-data.json";
-        String json_file = "rabbit-data.json";
+        String jsonname = ((MainActivity)getActivity()).getpetdata();
+
+        String json_file = jsonname + "-data.json";
         try {
 
             InputStream is = getContext().getAssets().open(json_file);
@@ -123,7 +122,7 @@ public class OverviewFragment extends Fragment {
 
     }
 
-    public void openItem(View view, ListItem listitem){
+    public void openItem(View view, ListItemOverview listitem){
 
         String title = listitem.getName();
         String description = listitem.getBeschreibung();

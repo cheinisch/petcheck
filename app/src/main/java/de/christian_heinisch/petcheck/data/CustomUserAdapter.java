@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -17,15 +16,15 @@ import de.christian_heinisch.petcheck.R;
 /**
  * Created by chris on 09.10.2016.
  */
-public class CustomUserAdapter extends ArrayAdapter<ListItem> {
+public class CustomUserAdapter extends ArrayAdapter<ListItemOverview> {
 
-    public CustomUserAdapter(Context context, ArrayList<ListItem> users) {
+    public CustomUserAdapter(Context context, ArrayList<ListItemOverview> users) {
         super(context, 0, users);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
-        ListItem user = getItem(position);
+        ListItemOverview user = getItem(position);
         if(convertView == null){
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_user, parent, false);
 
@@ -44,7 +43,7 @@ public class CustomUserAdapter extends ArrayAdapter<ListItem> {
     public void openitem(View view){
 
 
-        ListItem user = (ListItem) view.getTag();
+        ListItemOverview user = (ListItemOverview) view.getTag();
 
         // Erstelle einen neuen Intent und weise ihm eine Actvity zu
         Intent intent = new Intent(getContext(), ItemDetailActivity.class);

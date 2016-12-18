@@ -10,14 +10,14 @@ import java.util.ArrayList;
  * Created by chris on 09.10.2016.
  */
 
-public class ListItem {
+public class ListItemOverview {
 
     public String name;
     public String beschreibung;
     public String bild;
     public String langtext;
 
-    public ListItem(String name, String beschreibung, String bild, String langtext){
+    public ListItemOverview(String name, String beschreibung, String bild, String langtext){
         this.name = name;
         this.beschreibung = beschreibung;
         this.bild = bild;

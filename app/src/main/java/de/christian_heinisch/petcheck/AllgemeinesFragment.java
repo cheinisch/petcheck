@@ -14,9 +14,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Locale;
-
-import de.christian_heinisch.petcheck.data.ListItem;
 
 public class AllgemeinesFragment extends Fragment {
 
