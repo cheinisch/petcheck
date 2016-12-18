@@ -65,7 +65,9 @@ public class AllgemeinesFragment extends Fragment {
 
     public String loadJSONFromAsset() {
         String json = null;
-        String json_file = "rabbit-data.json";
+        String jsonname = ((MainActivity)getActivity()).getpetdata();
+
+        String json_file = jsonname + "-data.json";
         try {
 
             InputStream is = getContext().getAssets().open(json_file);
