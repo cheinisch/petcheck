@@ -13,6 +13,12 @@
       "Beschreibung":"Wo bekomme ich einen Hund her?",
       "URL":"kein_bild",
       "Langtext":"Aus dem Tierheim"
+    },
+    {
+      "Titel":"Beschäftigung",
+      "Beschreibung":"Wie verbringt der Hund die Zeit",
+      "URL":"kein_bild",
+      "Langtext":"Viel Spielen und Gassi gehen."
     }
   ]
 }
