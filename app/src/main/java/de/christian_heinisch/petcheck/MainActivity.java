@@ -105,9 +105,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_auswahl) {
-            /*
+
             Intent intent = new Intent(this, SelectActivity.class);
-            startActivity(intent);*/
+            startActivity(intent);
         }
 
         if (id == R.id.nav_allgemeines) {
