@@ -6,7 +6,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -53,6 +56,7 @@ public class AllgemeinesFragment extends Fragment {
         String titel = obj.getString("Titel");
         String text = obj.getString("Text");
         String warntext = obj.getString("Warntext");
+        String bild = obj.getString("Bild");
 
         TextView textTitel = (TextView) rootview.findViewById(R.id.text_allgemeines_title);
         TextView textText = (TextView) rootview.findViewById(R.id.text_allgemeines_text);
@@ -61,6 +65,8 @@ public class AllgemeinesFragment extends Fragment {
         textTitel.setText(titel);
         textText.setText(text);
         textWarntext.setText(warntext);
+
+        titelbild(bild);
     }
 
     public String loadJSONFromAsset() {
@@ -82,6 +88,26 @@ public class AllgemeinesFragment extends Fragment {
             return null;
         }
         return json;
+
+    }
+
+    public void titelbild(String url_load) {
+
+        // Titelbild in imageView speichern
+        ImageView imageView = (ImageView) rootview.findViewById(R.id.imageViewAllgemeines);
+
+        String mDrawableName = url_load;
+        int resID = getResources().getIdentifier(mDrawableName , "drawable", getContext().getPackageName());
+
+
+        // Titelbild der Detailseite setzten
+        Picasso.with(getContext())
+                .load(resID)
+                .placeholder(R.drawable.ic_placeholder) // optional
+                .error(R.drawable.ic_error_fallback)         // optional
+                //.fit()
+                .into(imageView);
+
 
     }
 

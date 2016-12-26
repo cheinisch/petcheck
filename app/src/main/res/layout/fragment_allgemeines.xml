@@ -28,7 +28,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/image_rabbit_abby"
+                app:srcCompat="@drawable/ic_rabbit"
                 android:id="@+id/imageViewAllgemeines"
                 android:cropToPadding="false"
                 android:adjustViewBounds="true"
