@@ -22,6 +22,9 @@ import org.w3c.dom.Text;
 
 import java.io.InputStream;
 
+import de.christian_heinisch.petcheck.data.JSONParser;
+import de.christian_heinisch.petcheck.data.ReadWriteJsonFileUtils;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -253,6 +256,19 @@ public class MainActivity extends AppCompatActivity
 
         String Tiername = settings.getString("titel", "Kaninchen").toString();
 
+        JSONParser jParser = new JSONParser();
+
+        // Getting JSON from URL
+        /*
+        String data = jParser.getJSONFromUrl("https://haustiercheck.christian-heinisch.de/daten/rabbit/json/rabbit-data.json");
+
+        try {
+            new ReadWriteJsonFileUtils(getApplicationContext()).createJsonFileData("rabbit.json", data);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
+
+
         System.out.println(Tiername);
 
         Menu header=navigationView.getMenu();
@@ -270,7 +286,13 @@ public class MainActivity extends AppCompatActivity
 
         json = settings.getString("json", "rabbit").toString();
 
+        updateRabbit();
+
         return json;
+
+    }
+
+    public void updateRabbit(){
 
     }
 

@@ -1,0 +1,36 @@
+{
+  "beschreibung":[
+    {
+      "Titel":"Fische",
+      "Bild":"ic_dog",
+      "Text":"Aquarien mit Fischbesatz sind der Trend 2016.\nAber wusstet ihr, das man mehr als nur ein kleines Becken mit Wasser benötigt?",
+      "Warntext":"Aquarien mit Fischbesatz sind sehr Zeitaufwendig und müssen gepflegt werden. Wenn dies nicht beachtet wird, hat man keinen Spaß mit dem Aquarium und man ärgert sich nur über die ganzen Anschaffungskosten."
+    }
+  ],
+  "listdata": [
+    {
+      "Titel":"Anschaffung",
+      "Beschreibung":"Was benötige ich für einen guten Start?",
+      "URL":"kein_bild",
+      "Langtext":"Für einen guten und sicheren Start benötigt ihr zu erst ein Becken, eine Pumpe, Licht und Pflanzen.\nDie Fische kommen erst viel später hinzu.\n\nDie Beckengröße sollte ab 100l beginnen.\n"
+    },
+    {
+      "Titel":"Einrichtung",
+      "Beschreibung":"Wie fange ich an",
+      "URL":"kein_bild",
+      "Langtext":"Für einen guten und sicheren Start benötigt ihr zu erst ein Becken, eine Pumpe, Licht und Pflanzen.\nDie Fische kommen erst viel später hinzu."
+    },
+    {
+      "Titel":"Die ersten Tiere",
+      "Beschreibung":"Was benötige ich für einen guten Start?",
+      "URL":"kein_bild",
+      "Langtext":"Für den Anfang eignen sich NEonfische oder Platis. Es sollten jedoch nciht zu viele Fische sein. Je nach Sorte, muss man sich über die Fischschwarmgröße informieren"
+    },
+    {
+      "Titel":"Pflege",
+      "Beschreibung":"Wie pflege ich die Tiere",
+      "URL":"kein_bild",
+      "Langtext":"Das Aquarium muss regelmäßig gereinigt werden.\nHierzu gehört ein Wasserwechsel und das Absaugen des Fischkotes"
+    }
+  ]
+}

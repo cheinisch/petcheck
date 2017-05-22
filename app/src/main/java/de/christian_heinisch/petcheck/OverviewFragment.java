@@ -22,7 +22,7 @@ import java.util.Locale;
 
 import de.christian_heinisch.petcheck.data.CustomUserAdapter;
 import de.christian_heinisch.petcheck.data.ListItemOverview;
-
+import de.christian_heinisch.petcheck.data.ReadWriteJsonFileUtils;
 
 
 /**
@@ -83,7 +83,8 @@ public class OverviewFragment extends Fragment {
         ArrayList<ListItemOverview> listitems = new ArrayList<ListItemOverview>();
 
         // Läd JSON Daten aus der Datei in ein Objekt
-        JSONObject jsondata = new JSONObject(loadJSONFromAsset());
+        //JSONObject jsondata = new JSONObject(loadJSONFromAsset());
+        JSONObject jsondata = new JSONObject(new ReadWriteJsonFileUtils(getContext()).readJsonFileData("rabbit.json"));
         // Läd bestimmte Daten aus dem Objekt in ein Array
         JSONArray jsonarraylist = jsondata.getJSONArray("listdata");
 
@@ -108,6 +109,7 @@ public class OverviewFragment extends Fragment {
         try {
 
             InputStream is = getContext().getAssets().open(json_file);
+
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
