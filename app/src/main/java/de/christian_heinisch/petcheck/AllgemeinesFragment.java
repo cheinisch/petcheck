@@ -15,8 +15,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class AllgemeinesFragment extends Fragment {
 
@@ -48,7 +50,11 @@ public class AllgemeinesFragment extends Fragment {
 
     public void loadData() throws JSONException {
         JSONObject jsondata = new JSONObject(loadJSONFromAsset());
+        //JSONObject jsondata = new JSONObject(readFile());
         // Läd bestimmte Daten aus dem Objekt in ein Array
+
+        System.out.println("DATEN: " + jsondata.getJSONArray("beschreibung"));
+
         JSONArray jsonarraylist = jsondata.getJSONArray("beschreibung");
 
         JSONObject obj = jsonarraylist.getJSONObject(0);
@@ -74,9 +80,11 @@ public class AllgemeinesFragment extends Fragment {
         String jsonname = ((MainActivity)getActivity()).getpetdata();
 
         String json_file = jsonname + "-data.json";
+        String FILE_NAME = jsonname + ".json";
         try {
 
             InputStream is = getContext().getAssets().open(json_file);
+
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
@@ -89,6 +97,33 @@ public class AllgemeinesFragment extends Fragment {
         }
         return json;
 
+    }
+
+    public String readFile(){
+
+        String newStr = "";
+        System.out.println("DATA IMPORT");
+        try {
+
+            String jsonname = ((MainActivity)getActivity()).getpetdata();
+
+            String FILE_NAME = jsonname + ".json";
+
+            BufferedReader bReader = new BufferedReader(new InputStreamReader(getActivity().openFileInput(FILE_NAME)));
+            String line;
+            StringBuffer text = new StringBuffer();
+            while ((line = bReader.readLine()) != null) {
+                text.append(line + "\n");
+            }
+            newStr = text.toString();
+
+        } catch (IOException e) {
+            loadJSONFromAsset();
+            e.printStackTrace();
+        }
+
+        System.out.println("JSONDATA" + newStr);
+        return newStr;
     }
 
     public void titelbild(String url_load) {

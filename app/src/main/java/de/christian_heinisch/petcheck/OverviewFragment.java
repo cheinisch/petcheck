@@ -15,8 +15,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -84,7 +86,8 @@ public class OverviewFragment extends Fragment {
 
         // Läd JSON Daten aus der Datei in ein Objekt
         //JSONObject jsondata = new JSONObject(loadJSONFromAsset());
-        JSONObject jsondata = new JSONObject(new ReadWriteJsonFileUtils(getContext()).readJsonFileData("rabbit.json"));
+        JSONObject jsondata = new JSONObject(readFile());
+
         // Läd bestimmte Daten aus dem Objekt in ein Array
         JSONArray jsonarraylist = jsondata.getJSONArray("listdata");
 
@@ -122,6 +125,33 @@ public class OverviewFragment extends Fragment {
         }
         return json;
 
+    }
+
+    public String readFile(){
+
+        String newStr = "";
+        System.out.println("DATA IMPORT");
+        try {
+
+            String jsonname = ((MainActivity)getActivity()).getpetdata();
+
+            String FILE_NAME = jsonname + ".json";
+
+            BufferedReader bReader = new BufferedReader(new InputStreamReader(getActivity().openFileInput(FILE_NAME)));
+            String line;
+            StringBuffer text = new StringBuffer();
+            while ((line = bReader.readLine()) != null) {
+                text.append(line + "\n");
+            }
+            newStr = text.toString();
+            System.out.println("JSONDATA" + newStr);
+        } catch (IOException e) {
+            loadJSONFromAsset();
+            e.printStackTrace();
+        }
+
+
+        return newStr;
     }
 
     public void openItem(View view, ListItemOverview listitem){
