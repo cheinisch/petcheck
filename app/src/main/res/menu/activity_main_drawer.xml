@@ -24,6 +24,12 @@
     </group>
     <group android:id="@+id/group_app">
         <item
+            android:id="@+id/action_settings"
+            android:orderInCategory="100"
+            android:title="@string/action_settings"
+            app:showAsAction="never"
+            android:icon="@drawable/ic_settings" />
+        <item
                 android:id="@+id/action_about"
                 android:orderInCategory="100"
                 android:title="@string/action_about"

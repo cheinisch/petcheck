@@ -65,6 +65,7 @@
     <!-- TODO: Strings für Einstellungen -->
     <string name="setting_head">Einstellungen</string>
     <string name="setting_reset_button">Eingaben zurücksetzten</string>
+    <string name="setting_update_button">Daten aktualisieren</string>
 
     <string name="title_activity_about">Über diese App</string>
     <string name="section_format">Hello World from section: %1$d</string>

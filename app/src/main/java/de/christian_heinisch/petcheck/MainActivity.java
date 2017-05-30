@@ -164,6 +164,9 @@ public class MainActivity extends AppCompatActivity
                     .addToBackStack(null)
                     .commit();
 
+        }else if(id == R.id.action_settings){
+            settings();
+
         }else if(id == R.id.action_about){
             about();
         }
@@ -199,6 +202,21 @@ public class MainActivity extends AppCompatActivity
                 R.id.content_main,
                 overviewFragment,
                 overviewFragment.getTag()
+        )
+                .addToBackStack(null)
+                .commit();
+    }
+
+    public void settings() {
+
+        titelleiste("Einstellungen");
+
+        SettingFragment settingFragment = new SettingFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(
+                R.id.content_main,
+                settingFragment,
+                settingFragment.getTag()
         )
                 .addToBackStack(null)
                 .commit();
