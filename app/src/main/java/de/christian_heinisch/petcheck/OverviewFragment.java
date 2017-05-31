@@ -86,8 +86,8 @@ public class OverviewFragment extends Fragment {
         ArrayList<ListItemOverview> listitems = new ArrayList<ListItemOverview>();
 
         // Läd JSON Daten aus der Datei in ein Objekt
-        //JSONObject jsondata = new JSONObject(loadJSONFromAsset());
-        JSONObject jsondata = new JSONObject(readFile());
+        JSONObject jsondata = new JSONObject(loadJSONFromAsset());
+
 
         // Läd bestimmte Daten aus dem Objekt in ein Array
         JSONArray jsonarraylist = jsondata.getJSONArray("listdata");
@@ -115,14 +115,13 @@ public class OverviewFragment extends Fragment {
 
             InputStream is;
 
-            //File file = new File("rabbit.json");
-            //if(file.exists()){
-                //System.out.println("file is already there");
+            if(filecheck(FILE_NAME) == false)
+            {
+                System.out.println("file Not Exist");
+                is = getContext().getAssets().open(json_file);
+            }else {
                 is = getActivity().openFileInput(FILE_NAME);
-            //}else{
-                System.out.println("Not find file ");
-              //  is = getContext().getAssets().open(json_file);
-            //}
+            }
 
             int size = is.available();
             byte[] buffer = new byte[size];
@@ -138,32 +137,11 @@ public class OverviewFragment extends Fragment {
 
     }
 
-    public String readFile(){
-
-        String newStr = "";
-        System.out.println("DATA IMPORT");
-        try {
-
-            String jsonname = ((MainActivity)getActivity()).getpetdata();
-
-            String FILE_NAME = jsonname + ".json";
-
-            BufferedReader bReader = new BufferedReader(new InputStreamReader(getActivity().openFileInput(FILE_NAME)));
-            String line;
-            StringBuffer text = new StringBuffer();
-            while ((line = bReader.readLine()) != null) {
-                text.append(line + "\n");
-            }
-            newStr = text.toString();
-            System.out.println("JSONDATA" + newStr);
-        } catch (IOException e) {
-            loadJSONFromAsset();
-            e.printStackTrace();
-        }
-
-
-        return newStr;
+    public boolean filecheck(String FILE_NAME){
+        File file = getActivity().getFileStreamPath(FILE_NAME);
+        return file.exists();
     }
+
 
     public void openItem(View view, ListItemOverview listitem){
 

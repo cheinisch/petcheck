@@ -52,6 +52,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="de.christian_heinisch.petcheck.MainActivity" />
         </activity>
+        <activity android:name=".UpdateActivity"></activity>
     </application>
 
 </manifest>
