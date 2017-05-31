@@ -20,6 +20,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.io.File;
 import java.io.InputStream;
 
 import de.christian_heinisch.petcheck.data.JSONParser;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity
 
     // Erstelle einen Zähler für GoBack mit dem Wert 0
     public int gobackcound = 0;
+    String FILE_NAME = "rabbit.json";
 
     NavigationView navigationView;
 
@@ -41,6 +43,13 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if(filecheck(FILE_NAME) == false)
+        {
+            System.out.println("file Not Exist");
+            startActivity(new Intent(this, UpdateActivity.class));
+        }
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -65,10 +74,6 @@ public class MainActivity extends AppCompatActivity
 
 
     }
-
-
-
-
 
     @Override
     public void onBackPressed() {
@@ -304,14 +309,14 @@ public class MainActivity extends AppCompatActivity
 
         json = settings.getString("json", "rabbit").toString();
 
-        updateRabbit();
-
         return json;
 
     }
 
-    public void updateRabbit(){
 
+    public boolean filecheck(String FILE_NAME){
+        File file = this.getFileStreamPath(FILE_NAME);
+        return file.exists();
     }
 
 }
