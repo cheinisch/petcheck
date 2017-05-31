@@ -16,6 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -49,8 +50,8 @@ public class AllgemeinesFragment extends Fragment {
 
 
     public void loadData() throws JSONException {
-        //JSONObject jsondata = new JSONObject(loadJSONFromAsset());
-        JSONObject jsondata = new JSONObject(readFile());
+        JSONObject jsondata = new JSONObject(loadJSONFromAsset());
+        //JSONObject jsondata = new JSONObject(readFile());
 
         // Läd bestimmte Daten aus dem Objekt in ein Array
 
@@ -84,7 +85,16 @@ public class AllgemeinesFragment extends Fragment {
         String FILE_NAME = jsonname + ".json";
         try {
 
-            InputStream is = getContext().getAssets().open(json_file);
+            InputStream is;
+
+            File file = new File("rabbit.json");
+            if(file.exists()){
+                System.out.println("file is already there");
+                is = getActivity().openFileInput(FILE_NAME);
+            }else{
+                System.out.println("Not find file ");
+                is = getContext().getAssets().open(json_file);
+            }
 
             int size = is.available();
             byte[] buffer = new byte[size];
