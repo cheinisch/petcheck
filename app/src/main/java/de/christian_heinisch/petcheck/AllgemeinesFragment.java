@@ -49,8 +49,9 @@ public class AllgemeinesFragment extends Fragment {
 
 
     public void loadData() throws JSONException {
-        JSONObject jsondata = new JSONObject(loadJSONFromAsset());
-        //JSONObject jsondata = new JSONObject(readFile());
+        //JSONObject jsondata = new JSONObject(loadJSONFromAsset());
+        JSONObject jsondata = new JSONObject(readFile());
+
         // Läd bestimmte Daten aus dem Objekt in ein Array
 
         System.out.println("DATEN: " + jsondata.getJSONArray("beschreibung"));
@@ -103,18 +104,21 @@ public class AllgemeinesFragment extends Fragment {
 
         String newStr = "";
         System.out.println("DATA IMPORT");
+        String jsonname = ((MainActivity)getActivity()).getpetdata();
+
+        String FILE_NAME = jsonname + ".json";
         try {
-
-            String jsonname = ((MainActivity)getActivity()).getpetdata();
-
-            String FILE_NAME = jsonname + ".json";
 
             BufferedReader bReader = new BufferedReader(new InputStreamReader(getActivity().openFileInput(FILE_NAME)));
             String line;
+
             StringBuffer text = new StringBuffer();
+            System.out.println("----");
             while ((line = bReader.readLine()) != null) {
-                text.append(line + "\n");
+                System.out.println(bReader.readLine());
+                text.append(line);
             }
+            System.out.println("----");
             newStr = text.toString();
 
         } catch (IOException e) {
@@ -122,7 +126,9 @@ public class AllgemeinesFragment extends Fragment {
             e.printStackTrace();
         }
 
-        System.out.println("JSONDATA" + newStr);
+        //System.out.println("JSONDATA" + newStr.substring(newStr.indexOf("["), newStr.lastIndexOf("]") + 1));
+
+        //return (newStr.substring(newStr.indexOf("{"), newStr.lastIndexOf("}") + 1));
         return newStr;
     }
 

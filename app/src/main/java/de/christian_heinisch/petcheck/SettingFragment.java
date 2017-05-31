@@ -13,12 +13,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
-import java.io.BufferedReader;
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+
 
 public class SettingFragment extends Fragment {
 
@@ -91,7 +94,7 @@ public class SettingFragment extends Fragment {
 
             // Update Kaninchen
 
-            getData("https://haustiercheck.christian-heinisch.de/daten/rabbit/json/rabbit-data.json", "rabbit.json");
+            getData("https://raw.githubusercontent.com/cheinisch/petcheck/master/app/src/main/assets/rabbit-data.json", "rabbit.json");
 
             // 33%
             mHandler.post(new Runnable() {
@@ -134,24 +137,37 @@ public class SettingFragment extends Fragment {
         try {
             // Create a URL for the desired page
             URL url = new URL(datasource);
+            StringBuffer sbuf;
+            String str = "";
+            System.out.println("start download");
+            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+            try {
+                InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                str = readStream(in).toString();
 
-            // Read all the text returned by the server
-            BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
-            String str;
-            String test2 = in.readLine();
-
-            while ((str = in.readLine()) != null) {
-                // str is one line of text; readLine() strips the newline character(s)
-                text.append(str + "\n");
+            } finally {
+                urlConnection.disconnect();
             }
-            in.close();
+            System.out.println(str);
 
-            //Convert Bufferd String to String
-            String newStr = text.toString();
-
-            write(newStr, Filename);
+            write(str, Filename);
         } catch (MalformedURLException e) {
         } catch (IOException e) {
+        }
+    }
+
+    private String readStream(InputStream is) {
+        try {
+            ByteArrayOutputStream bo = new ByteArrayOutputStream();
+            int i = is.read();
+            while(i != -1) {
+                bo.write(i);
+                i = is.read();
+            }
+
+            return bo.toString();
+        } catch (IOException e) {
+            return "";
         }
     }
 
