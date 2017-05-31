@@ -87,16 +87,17 @@ public class AllgemeinesFragment extends Fragment {
 
             InputStream is;
 
-            File file = new File("rabbit.json");
-            if(file.exists()){
-                System.out.println("file is already there");
-                is = getActivity().openFileInput(FILE_NAME);
-            }else{
-                System.out.println("Not find file ");
+            if(filecheck(FILE_NAME) == false)
+            {
+                System.out.println("file Not Exist");
                 is = getContext().getAssets().open(json_file);
+            }else {
+                is = getActivity().openFileInput(FILE_NAME);
             }
 
             int size = is.available();
+
+
             byte[] buffer = new byte[size];
             is.read(buffer);
             is.close();
@@ -140,6 +141,11 @@ public class AllgemeinesFragment extends Fragment {
 
         //return (newStr.substring(newStr.indexOf("{"), newStr.lastIndexOf("}") + 1));
         return newStr;
+    }
+
+    public boolean filecheck(String FILE_NAME){
+        File file = getActivity().getFileStreamPath(FILE_NAME);
+        return file.exists();
     }
 
     public void titelbild(String url_load) {

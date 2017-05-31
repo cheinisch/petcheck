@@ -94,7 +94,7 @@ public class SettingFragment extends Fragment {
 
             // Update Kaninchen
 
-            getData("https://raw.githubusercontent.com/cheinisch/petcheck/master/app/src/main/assets/rabbit-data.json", "rabbit.json");
+            getData("https://haustiercheck.christian-heinisch.de/daten/rabbit/json/rabbit-data.json", "rabbit.json");
 
             // 33%
             mHandler.post(new Runnable() {
