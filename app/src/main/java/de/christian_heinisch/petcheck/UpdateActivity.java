@@ -62,7 +62,7 @@ public class UpdateActivity extends AppCompatActivity {
 
             // Update Fische
 
-            getData("https://haustiercheck.christian-heinisch.de/daten/rabbit/json/rabbit-data.json", "fish.json");
+            getData("https://haustiercheck.christian-heinisch.de/daten/fish/json/fish-data.json", "fish.json");
 
             mHandler.post(new Runnable() {
                 public void run() {
@@ -72,7 +72,7 @@ public class UpdateActivity extends AppCompatActivity {
 
             // Update Hund
 
-            getData("https://haustiercheck.christian-heinisch.de/daten/rabbit/json/rabbit-data.json", "dog.json");
+            getData("https://haustiercheck.christian-heinisch.de/daten/dog/json/dog-data.json", "dog.json");
 
             // 100%
             mHandler.post(new Runnable() {
