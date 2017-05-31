@@ -11,6 +11,7 @@
         android:layout_width="368dp"
         android:layout_height="wrap_content"
         android:text="Datenupdate"
+        android:textAppearance="@android:style/TextAppearance.Material.Widget.Toolbar.Title"
         android:textAlignment="center"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="246dp" />
