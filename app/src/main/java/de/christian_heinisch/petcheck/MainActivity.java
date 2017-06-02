@@ -12,19 +12,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.InputStream;
 
 import de.christian_heinisch.petcheck.data.JSONParser;
-import de.christian_heinisch.petcheck.data.ReadWriteJsonFileUtils;
 
 
 public class MainActivity extends AppCompatActivity
@@ -93,14 +88,6 @@ public class MainActivity extends AppCompatActivity
         }
 
     }
-/*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }*/
-
 
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -155,21 +142,29 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_checkliste) {
 
+            // Zähler zum zurückgehen wird um 1 erhöht. Wird für die Funktion onBackPressed() benötigt
             gobackcound = gobackcound + 1;
 
+            // Setzt den Text der Titelleiste auf Checkliste
             titelleiste(getResources().getString(R.string.checklist_header));
 
+            // Läd für jedes Tier das passende Checklistenfragment
             if(getPetNameString().equals("Kaninchen")){
                 rabbitCheck();
             }else if(getPetNameString().equals("Aquarienfische")){
                 fishCheck();
+            }else if(getPetNameString().equals("Hund")){
+                //Do nothing
             }
 
 
         }else if(id == R.id.action_settings){
+            // Läd das Einstellungenfragment
             settings();
 
         }else if(id == R.id.action_about){
+
+            // Läd das Über die App Fragment
             about();
         }
 
@@ -302,24 +297,9 @@ public class MainActivity extends AppCompatActivity
 
         JSONParser jParser = new JSONParser();
 
-        // Getting JSON from URL
-        /*
-        String data = jParser.getJSONFromUrl("https://haustiercheck.christian-heinisch.de/daten/rabbit/json/rabbit-data.json");
-
-        try {
-            new ReadWriteJsonFileUtils(getApplicationContext()).createJsonFileData("rabbit.json", data);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }*/
-
-
-        System.out.println(Tiername);
-
         Menu header=navigationView.getMenu();
         MenuItem test = header.findItem(R.id.nav_auswahl);
         test.setTitle(Tiername);
-
-
     }
 
     public String getPetNameString(){
@@ -344,7 +324,10 @@ public class MainActivity extends AppCompatActivity
 
 
     public boolean filecheck(String FILE_NAME){
+        // Gibt der Variable file den Pfad un den Namen der zu prüfenden Datei
         File file = this.getFileStreamPath(FILE_NAME);
+
+        // Gibt ein True oder False zurück
         return file.exists();
     }
 

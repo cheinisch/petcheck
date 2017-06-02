@@ -38,6 +38,14 @@
     <string name="check_futter">Futter</string>
     <string name="check_kruschel">Kruschelkiste</string>
 
+    <!-- Checkliste Fische -->
+    <string name="checkFish_Aquarium">Aquarium</string>
+    <string name="checkFish_Pumpe">Pumpe</string>
+    <string name="checkFish_Heizung">Heizstab</string>
+    <string name="checkFish_Licht">Licht</string>
+    <string name="checkFish_Sand">Sand</string>
+    <string name="checkFish_Pflanzen">Pflanzen</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment"></string>
 
