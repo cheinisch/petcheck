@@ -159,15 +159,12 @@ public class MainActivity extends AppCompatActivity
 
             titelleiste(getResources().getString(R.string.checklist_header));
 
-            RabbitCheckFragment rabbitCheckFragment = new RabbitCheckFragment();
-            FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(
-                    R.id.content_main,
-                    rabbitCheckFragment,
-                    rabbitCheckFragment.getTag()
-            )
-                    .addToBackStack(null)
-                    .commit();
+            if(getPetNameString().equals("Kaninchen")){
+                rabbitCheck();
+            }else if(getPetNameString().equals("Aquarienfische")){
+                fishCheck();
+            }
+
 
         }else if(id == R.id.action_settings){
             settings();
@@ -207,6 +204,30 @@ public class MainActivity extends AppCompatActivity
                 R.id.content_main,
                 overviewFragment,
                 overviewFragment.getTag()
+        )
+                .addToBackStack(null)
+                .commit();
+    }
+
+    public void rabbitCheck(){
+        RabbitCheckFragment rabbitCheckFragment = new RabbitCheckFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(
+                R.id.content_main,
+                rabbitCheckFragment,
+                rabbitCheckFragment.getTag()
+        )
+                .addToBackStack(null)
+                .commit();
+    }
+
+    public void fishCheck(){
+        FishCheckFragment fishCheckFragment = new FishCheckFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(
+                R.id.content_main,
+                fishCheckFragment,
+                fishCheckFragment.getTag()
         )
                 .addToBackStack(null)
                 .commit();
@@ -299,6 +320,14 @@ public class MainActivity extends AppCompatActivity
         test.setTitle(Tiername);
 
 
+    }
+
+    public String getPetNameString(){
+        SharedPreferences settings = this.getSharedPreferences("Petload", 0);
+
+        String Tiername = settings.getString("titel", "Kaninchen").toString();
+
+        return Tiername;
     }
 
     public String getpetdata(){
