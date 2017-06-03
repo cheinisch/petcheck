@@ -342,12 +342,15 @@ public class MainActivity extends AppCompatActivity
 
     public void CheckAutoUpdate(){
 
-        long timestamp = System.currentTimeMillis();
         long old_timestamp;
+        // Hole den aktuellen Timestamp
+        long timestamp = System.currentTimeMillis();
 
+        // Hole den letzten update Timestamp aus den SharedPreferences
         SharedPreferences settings = this.getSharedPreferences("UpdateInfo", 0);
         old_timestamp = settings.getLong("LastUpdate", timestamp);
 
+        // Vergleiche die Zeitstempel, wenn die differenz größer 90 ist, mache ein Update
         if(TimeUnit.MILLISECONDS.toDays(timestamp) > TimeUnit.MILLISECONDS.toDays(old_timestamp)+time_between){
             Update();
         }
