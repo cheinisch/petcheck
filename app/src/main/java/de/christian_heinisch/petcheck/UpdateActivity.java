@@ -2,6 +2,7 @@ package de.christian_heinisch.petcheck;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.security.Timestamp;
 
 public class UpdateActivity extends AppCompatActivity {
 
@@ -84,6 +86,10 @@ public class UpdateActivity extends AppCompatActivity {
 
             // 100%
 
+            //Setzt einen aktuellen Timestamp als letztes Updatedatum
+            setUpdateDate();
+
+            // Neustart der App
             Intent i = getBaseContext().getPackageManager()
                     .getLaunchIntentForPackage(getBaseContext().getPackageName());
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -91,6 +97,17 @@ public class UpdateActivity extends AppCompatActivity {
 
             return null;
         }
+
+    }
+
+    private void setUpdateDate() {
+
+        long timestamp = System.currentTimeMillis();
+
+        SharedPreferences settings = this.getSharedPreferences("UpdateInfo", 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putLong("LastUpdate", timestamp);
+        editor.commit();
 
     }
 

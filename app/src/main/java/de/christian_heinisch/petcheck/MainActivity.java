@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import java.io.File;
 import java.io.InputStream;
+import java.util.concurrent.TimeUnit;
 
 import de.christian_heinisch.petcheck.data.JSONParser;
 
@@ -29,7 +30,12 @@ public class MainActivity extends AppCompatActivity
 
     // Erstelle einen Zähler für GoBack mit dem Wert 0
     public int gobackcound = 0;
-    String FILE_NAME = "rabbit.json";
+
+    // Zeit für den Zeitraum, nachdem das Autoupdate gemacht werden muss
+    public int time_between = 90;
+
+    // String für die Dateiprüfung. Da der Fisch das neuste Tier ist, wird die geprüft
+    String FILE_NAME = "fish.json";
 
     NavigationView navigationView;
 
@@ -41,9 +47,11 @@ public class MainActivity extends AppCompatActivity
 
         if(filecheck(FILE_NAME) == false)
         {
-            System.out.println("file Not Exist");
-            startActivity(new Intent(this, UpdateActivity.class));
+            Update();
         }
+
+        // Automatisches Update alle 90 Tage
+        CheckAutoUpdate();
 
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -69,6 +77,7 @@ public class MainActivity extends AppCompatActivity
 
 
     }
+
 
     @Override
     public void onBackPressed() {
@@ -329,6 +338,26 @@ public class MainActivity extends AppCompatActivity
 
         // Gibt ein True oder False zurück
         return file.exists();
+    }
+
+    public void CheckAutoUpdate(){
+
+        long timestamp = System.currentTimeMillis();
+        long old_timestamp;
+
+        SharedPreferences settings = this.getSharedPreferences("UpdateInfo", 0);
+        old_timestamp = settings.getLong("LastUpdate", timestamp);
+
+        if(TimeUnit.MILLISECONDS.toDays(timestamp) > TimeUnit.MILLISECONDS.toDays(old_timestamp)+time_between){
+            Update();
+        }
+
+    }
+
+
+    private void Update() {
+        System.out.println("file Not Exist");
+        startActivity(new Intent(this, UpdateActivity.class));
     }
 
 }
