@@ -12,8 +12,8 @@ android {
         applicationId "de.christian_heinisch.petcheck"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 15
-        versionName '1.9.0'
+        versionCode 16
+        versionName '1.9.1'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
@@ -25,7 +25,15 @@ android {
     }
     android {
         productFlavors {
-
+            lite {
+                applicationId "de.christian_heinisch.petcheck"
+            }
+            develompment {
+                applicationId "de.christian_heinisch.petcheck"
+            }
+            pro {
+                applicationId "dde.christian_heinisch.petcheck"
+            }
         }
     }
 }
