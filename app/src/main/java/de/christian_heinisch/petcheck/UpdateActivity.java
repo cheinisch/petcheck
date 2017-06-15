@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
@@ -22,12 +23,12 @@ import java.security.Timestamp;
 
 public class UpdateActivity extends AppCompatActivity {
 
-    private Button button;
-    private Button updateButton;
     private ProgressBar mProgress;
     private int mProgressStatus = 0;
     private Handler mHandler = new Handler();
+    private TextView percent;
     StringBuffer text = new StringBuffer();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,8 @@ public class UpdateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_update);
         mProgress = (ProgressBar) findViewById(R.id.progressBarUpdate_new);
         mProgress.setProgress(mProgressStatus);
+        percent = (TextView) findViewById(R.id.textViewUpdateProgress);
+
         new update().execute();
 
     }
@@ -48,6 +51,7 @@ public class UpdateActivity extends AppCompatActivity {
             mHandler.post(new Runnable() {
                 public void run() {
                     mProgress.setProgress(mProgressStatus);
+                    percent.setText(mProgressStatus + " %");
                 }
             });
 
@@ -58,7 +62,9 @@ public class UpdateActivity extends AppCompatActivity {
             // 33%
             mHandler.post(new Runnable() {
                 public void run() {
-                    mProgress.setProgress(33);
+                    mProgressStatus = 33;
+                    mProgress.setProgress(mProgressStatus);
+                    percent.setText(mProgressStatus + " %");
                 }
             });
 
@@ -68,7 +74,9 @@ public class UpdateActivity extends AppCompatActivity {
 
             mHandler.post(new Runnable() {
                 public void run() {
-                    mProgress.setProgress(66);
+                    mProgressStatus = 66;
+                    mProgress.setProgress(mProgressStatus);
+                    percent.setText(mProgressStatus + " %");
                 }
             });
 
@@ -79,7 +87,9 @@ public class UpdateActivity extends AppCompatActivity {
             // 100%
             mHandler.post(new Runnable() {
                 public void run() {
-                    mProgress.setProgress(100);
+                    mProgressStatus = 100;
+                    mProgress.setProgress(mProgressStatus);
+                    percent.setText(mProgressStatus + " %");
                 }
             });
 

@@ -29,7 +29,7 @@ public class SettingFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootview = inflater.inflate(R.layout.fragment_setting, container, false);
-
+/*
         button = (Button) rootview.findViewById(R.id.buttonSettingReset);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +38,7 @@ public class SettingFragment extends Fragment {
                 delete_data();
             }
         });
-
+*/
         updateButton = (Button) rootview.findViewById(R.id.buttonUpdateData);
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
