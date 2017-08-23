@@ -12,8 +12,8 @@ android {
         applicationId "de.christian_heinisch.petcheck"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 18
-        versionName '1.9.3'
+        versionCode 19
+        versionName '1.9.3.1'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
@@ -23,21 +23,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    android {
-        productFlavors {
-            lite {
-                applicationId "de.christian_heinisch.petcheck"
-            }
-            development {
-                applicationId "de.christian_heinisch.petcheck"
-            }
-            pro {
-                applicationId "dde.christian_heinisch.petcheck"
-            }
+    flavorDimensions "app"
+
+    productFlavors {
+        lite {
+            dimension "app"
+            applicationId "de.christian_heinisch.petcheck"
+
         }
+
     }
 }
-
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
